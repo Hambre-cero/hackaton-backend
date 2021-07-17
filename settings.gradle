@@ -1,0 +1,9 @@
+rootProject.name = 'hambre-cero-services'
+
+include 'web-services'
+include 'business'
+include 'business-api'
+include 'commons'
+include 'iam'
+include 'iam-api'
+include 'security'
