@@ -1,0 +1,1 @@
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar web-services/build/libs/hambre-cero-web-service-1.0.0.jar
