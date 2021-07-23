@@ -10,13 +10,10 @@ public interface Announce {
   String getId();
 
   @Nonnull
-  String getName();
+  String getTitle();
 
   @Nonnull
   String getDescription();
-
-  @Nonnull
-  String getOrganizationId();
 
   @Nonnull
   AnnounceStatus getStatus();

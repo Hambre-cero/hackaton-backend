@@ -15,13 +15,10 @@ public class AnnounceValue implements Announce {
   private String id;
 
   @Nonnull
-  private String name;
+  private String title;
 
   @Nonnull
   private String description;
-
-  @Nonnull
-  private String organizationId;
 
   @Nonnull
   private AnnounceStatus status;
@@ -44,9 +41,8 @@ public class AnnounceValue implements Announce {
   ) {
     return new AnnounceValue(
         other.getId(),
-        other.getName(),
+        other.getTitle(),
         other.getDescription(),
-        other.getOrganizationId(),
         other.getStatus(),
         other.getCreatedOn(),
         other.getCreatedBy()

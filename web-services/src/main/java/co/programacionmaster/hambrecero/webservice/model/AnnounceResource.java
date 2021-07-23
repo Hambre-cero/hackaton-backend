@@ -15,13 +15,10 @@ public class AnnounceResource implements Announce {
   private String id;
 
   @Nonnull
-  private String name;
+  private String title;
 
   @Nonnull
   private String description;
-
-  @Nonnull
-  private String organizationId;
 
   @Nonnull
   private AnnounceStatus status;
@@ -44,9 +41,8 @@ public class AnnounceResource implements Announce {
   ) {
     return new AnnounceResource(
         other.getId(),
-        other.getName(),
+        other.getTitle(),
         other.getDescription(),
-        other.getOrganizationId(),
         other.getStatus(),
         other.getCreatedOn(),
         other.getCreatedBy()

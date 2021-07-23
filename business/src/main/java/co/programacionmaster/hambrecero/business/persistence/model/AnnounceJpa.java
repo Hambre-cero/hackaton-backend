@@ -1,8 +1,6 @@
 package co.programacionmaster.hambrecero.business.persistence.model;
 
 import co.programacionmaster.hambrecero.businessapi.enums.AnnounceStatus;
-import co.programacionmaster.hambrecero.businessapi.enums.AnnounceStatus;
-import co.programacionmaster.hambrecero.businessapi.model.Announce;
 import co.programacionmaster.hambrecero.businessapi.model.Announce;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.time.LocalDateTime;
@@ -26,13 +24,10 @@ public class AnnounceJpa implements Announce {
   private String id;
 
   @Nonnull
-  private String name;
+  private String title;
 
   @Nonnull
   private String description;
-
-  @Nonnull
-  private String organizationId;
 
   @Nonnull
   @Enumerated(EnumType.STRING)
@@ -63,9 +58,8 @@ public class AnnounceJpa implements Announce {
   ) {
     return new AnnounceJpa(
         other.getId(),
-        other.getName(),
+        other.getTitle(),
         other.getDescription(),
-        other.getOrganizationId(),
         other.getStatus(),
         other.getCreatedOn(),
         other.getCreatedBy()

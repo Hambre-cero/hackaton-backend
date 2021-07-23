@@ -4,10 +4,10 @@ create TABLE "users" (
   "email"                   VARCHAR(50) NOT NULL,
   "password"                VARCHAR NULL,
   "role_id"                 VARCHAR(100) NOT NULL,
-  "organization_id"         VARCHAR(100) NULL,
   "status"                  VARCHAR(10) NOT NULL,
   "created_on"              TIMESTAMP NOT NULL,
   "created_by"              VARCHAR(100) NOT NULL,
+  "organization_id"         VARCHAR(100) NULL,
   UNIQUE("email"),
   PRIMARY KEY ("id"))
 ;
@@ -17,8 +17,8 @@ create TABLE "organizations" (
   "identification"          VARCHAR(100) NOT NULL,
   "name"                    VARCHAR(100) NOT NULL,
   "country"                 VARCHAR(50) NOT NULL,
-  "city"                    VARCHAR(100) NOT NULL,
   "province"                VARCHAR(100) NOT NULL,
+  "city"                    VARCHAR(100) NOT NULL,
   "address"                 VARCHAR(200) NOT NULL,
   "postal_code"             VARCHAR(50) NULL,
   "phone_number"            VARCHAR(50) NOT NULL,
@@ -32,9 +32,8 @@ create TABLE "organizations" (
 
 create TABLE "announces" (
   "id"                      VARCHAR(100) NOT NULL,
-  "name"                    VARCHAR(100) NOT NULL,
+  "title"                   VARCHAR(100) NOT NULL,
   "description"             VARCHAR NOT NULL,
-  "organization_id"         VARCHAR(100) NULL,
   "status"                  VARCHAR(10) NOT NULL,
   "created_on"              TIMESTAMP NOT NULL,
   "created_by"              VARCHAR(100) NOT NULL,
