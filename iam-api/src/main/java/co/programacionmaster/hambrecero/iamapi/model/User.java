@@ -1,5 +1,6 @@
 package co.programacionmaster.hambrecero.iamapi.model;
 
+import co.programacionmaster.hambrecero.iamapi.model.enums.RoleId;
 import co.programacionmaster.hambrecero.iamapi.model.enums.UserStatus;
 import io.vavr.control.Option;
 import java.time.LocalDateTime;
@@ -18,6 +19,12 @@ public interface User {
 
   @Nonnull
   Option<String> getPassword();
+
+  @Nonnull
+  RoleId getRoleId();
+
+  @Nonnull
+  Option<String> getOrganizationId();
 
   @Nonnull
   UserStatus getStatus();

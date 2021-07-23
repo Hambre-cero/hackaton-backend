@@ -1,8 +1,10 @@
 package co.programacionmaster.hambrecero.iam.service;
 
+import co.programacionmaster.hambrecero.commons.exception.BadArgumentException;
 import co.programacionmaster.hambrecero.commons.exception.ResourceNotFoundException;
 import co.programacionmaster.hambrecero.commons.utils.MessageUtils;
 import co.programacionmaster.hambrecero.iamapi.model.User;
+import co.programacionmaster.hambrecero.iamapi.model.enums.RoleId;
 import co.programacionmaster.hambrecero.iamapi.repository.UserRepository;
 import co.programacionmaster.hambrecero.iamapi.service.UserMutations;
 import io.vavr.control.Try;
@@ -32,6 +34,12 @@ public class UserMutationsSpringImpl implements UserMutations {
       if (userRepository.findByEmailIgnoreCase(user.getEmail()).isDefined()) {
         throw new NonUniqueResultException(MessageUtils
             .getMessage(messageSource, "error.iam.user_is_already_registered"));
+      }
+
+      if (RoleId.ROLE_ORGANIZATION.equals(user.getRoleId())
+          && user.getOrganizationId().isEmpty()) {
+        throw new BadArgumentException(MessageUtils
+            .getMessage(messageSource, "error.iam.organization_id_must_not_be_null"));
       }
 
       validatePassword(user.getPassword().getOrNull()).get();

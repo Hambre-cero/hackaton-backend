@@ -1,5 +1,6 @@
 package co.programacionmaster.hambrecero.webservice.web.rest;
 
+import co.programacionmaster.hambrecero.businessapi.service.OrganizationQueries;
 import co.programacionmaster.hambrecero.iamapi.model.User;
 import co.programacionmaster.hambrecero.iamapi.model.enums.UserStatus;
 import co.programacionmaster.hambrecero.iamapi.service.UserMutations;

@@ -1,6 +1,7 @@
 package co.programacionmaster.hambrecero.iamapi.model.values;
 
 import co.programacionmaster.hambrecero.iamapi.model.User;
+import co.programacionmaster.hambrecero.iamapi.model.enums.RoleId;
 import co.programacionmaster.hambrecero.iamapi.model.enums.UserStatus;
 import io.vavr.control.Option;
 import java.time.LocalDateTime;
@@ -26,6 +27,12 @@ public class UserValue implements User {
   private String password;
 
   @Nonnull
+  private RoleId roleId;
+
+  @Nullable
+  private String organizationId;
+
+  @Nonnull
   private UserStatus status;
 
   @Nonnull
@@ -47,6 +54,8 @@ public class UserValue implements User {
         other.getName(),
         other.getEmail(),
         other.getPassword().getOrNull(),
+        other.getRoleId(),
+        other.getOrganizationId().getOrNull(),
         other.getStatus(),
         other.getCreatedOn(),
         other.getCreatedBy()
@@ -57,5 +66,11 @@ public class UserValue implements User {
   @Override
   public Option<String> getPassword() {
     return Option.of(password);
+  }
+
+  @Nonnull
+  @Override
+  public Option<String> getOrganizationId() {
+    return Option.of(organizationId);
   }
 }

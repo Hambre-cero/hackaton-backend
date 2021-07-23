@@ -1,6 +1,7 @@
 package co.programacionmaster.hambrecero.iam.persistence.model;
 
 import co.programacionmaster.hambrecero.iamapi.model.User;
+import co.programacionmaster.hambrecero.iamapi.model.enums.RoleId;
 import co.programacionmaster.hambrecero.iamapi.model.enums.UserStatus;
 import co.programacionmaster.hambrecero.iamapi.model.values.UserValue;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
@@ -37,6 +38,13 @@ public class UserJpa implements User {
 
   @Nonnull
   @Enumerated(EnumType.STRING)
+  private RoleId roleId;
+
+  @Nullable
+  private String organizationId;
+
+  @Nonnull
+  @Enumerated(EnumType.STRING)
   private UserStatus status;
 
   @Nonnull
@@ -65,6 +73,8 @@ public class UserJpa implements User {
         other.getName(),
         other.getEmail(),
         other.getPassword().getOrNull(),
+        other.getRoleId(),
+        other.getOrganizationId().getOrNull(),
         other.getStatus(),
         other.getCreatedOn(),
         other.getCreatedBy()
@@ -79,5 +89,11 @@ public class UserJpa implements User {
   @Override
   public Option<String> getPassword() {
     return Option.of(password);
+  }
+
+  @Nonnull
+  @Override
+  public Option<String> getOrganizationId() {
+    return Option.of(organizationId);
   }
 }
