@@ -5,11 +5,13 @@ import co.programacionmaster.hambrecero.iamapi.repository.UserRepository;
 import co.programacionmaster.hambrecero.iamapi.service.UserQueries;
 import io.vavr.control.Option;
 import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
+@ParametersAreNonnullByDefault
 public class UserQueriesSpringImpl implements UserQueries {
 
   private final UserRepository userRepository;

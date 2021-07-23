@@ -5,6 +5,7 @@ import co.programacionmaster.hambrecero.iam.persistence.repository.UserJpaReposi
 import co.programacionmaster.hambrecero.iamapi.model.User;
 import co.programacionmaster.hambrecero.iamapi.repository.UserRepository;
 import io.vavr.control.Option;
+import io.vavr.control.Try;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import javax.transaction.Transactional;
@@ -29,5 +30,15 @@ public class UserRepositorySpringImpl implements UserRepository {
   @Override
   public Option<User> findByEmailIgnoreCase(String email) {
     return userJpaRepository.findByEmailIgnoreCase(email).map(UserJpa::narrow);
+  }
+
+  @Nonnull
+  @Override
+  public Try<User> create(User user, String password) {
+    return Try.of(() -> {
+      UserJpa userJpa = UserJpa.from(user);
+      userJpa.setPassword(password);
+      return userJpaRepository.save(userJpa);
+    });
   }
 }

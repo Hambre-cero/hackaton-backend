@@ -1,16 +1,16 @@
 package co.programacionmaster.hambrecero.iamapi.service;
 
 import co.programacionmaster.hambrecero.iamapi.model.User;
-import io.vavr.control.Option;
+import io.vavr.control.Try;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+/**
+ * User mutation service contract.
+ */
 @ParametersAreNonnullByDefault
-public interface UserQueries {
+public interface UserMutations {
 
   @Nonnull
-  Option<User> find(String id);
-
-  @Nonnull
-  Option<User> findByEmail(String email);
+  Try<User> create(User user);
 }
