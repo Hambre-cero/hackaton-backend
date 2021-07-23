@@ -16,5 +16,8 @@ public interface UserRepository {
   Option<User> findByEmailIgnoreCase(String email);
 
   @Nonnull
-  Try<User> create(User user, String password);
+  Try<User> create(User user, String encryptedPassword);
+
+  @Nonnull
+  Try<User> update(User user, String encryptedPassword);
 }

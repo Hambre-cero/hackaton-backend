@@ -13,4 +13,12 @@ public interface UserMutations {
 
   @Nonnull
   Try<User> create(User user);
+
+  @Nonnull
+  Try<User> updatePassword(
+      String userId,
+      String oldPassword,
+      String newPassword,
+      String newPasswordConfirmed
+  );
 }

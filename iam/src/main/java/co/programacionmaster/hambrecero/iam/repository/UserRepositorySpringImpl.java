@@ -34,10 +34,20 @@ public class UserRepositorySpringImpl implements UserRepository {
 
   @Nonnull
   @Override
-  public Try<User> create(User user, String password) {
+  public Try<User> create(User user, String encryptedPassword) {
     return Try.of(() -> {
       UserJpa userJpa = UserJpa.from(user);
-      userJpa.setPassword(password);
+      userJpa.setPassword(encryptedPassword);
+      return userJpaRepository.save(userJpa);
+    });
+  }
+
+  @Nonnull
+  @Override
+  public Try<User> update(User user, String encryptedPassword) {
+    return Try.of(() -> {
+      UserJpa userJpa = UserJpa.from(user);
+      userJpa.setPassword(encryptedPassword);
       return userJpaRepository.save(userJpa);
     });
   }

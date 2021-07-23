@@ -1,5 +1,6 @@
 package co.programacionmaster.hambrecero.iam.service;
 
+import co.programacionmaster.hambrecero.commons.exception.ResourceNotFoundException;
 import co.programacionmaster.hambrecero.commons.utils.MessageUtils;
 import co.programacionmaster.hambrecero.iamapi.model.User;
 import co.programacionmaster.hambrecero.iamapi.repository.UserRepository;
@@ -18,7 +19,7 @@ import org.springframework.stereotype.Service;
 @ParametersAreNonnullByDefault
 public class UserMutationsSpringImpl implements UserMutations {
 
-  private static final String passwordRegex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,44}$";
+  private static final String PASSWORD_REGEX = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,44}$";
 
   private final UserRepository userRepository;
   private final MessageSource messageSource;
@@ -39,6 +40,41 @@ public class UserMutationsSpringImpl implements UserMutations {
     });
   }
 
+  @Nonnull
+  @Override
+  public Try<User> updatePassword(
+      String userId,
+      String oldPassword,
+      String newPassword,
+      String newPasswordConfirmed
+  ) {
+    return Try.of(() -> {
+      User user = userRepository
+          .find(userId)
+          .getOrElseThrow(() -> new ResourceNotFoundException(MessageUtils
+              .getMessage(messageSource, "error.iam.user_not_found", userId)));
+
+      if (!passwordEncoder.matches(oldPassword, user.getPassword().getOrNull())) {
+        throw new IllegalArgumentException(MessageUtils
+            .getMessage(messageSource, "error.iam.bad_old_password"));
+      }
+
+      if (!newPassword.equals(newPasswordConfirmed)) {
+        throw new IllegalArgumentException(MessageUtils
+            .getMessage(messageSource, "error.iam.password_must_be_equals_to_confirmed"));
+      }
+
+      if (newPassword.equals(oldPassword)) {
+        throw new IllegalArgumentException(MessageUtils
+            .getMessage(messageSource, "error.iam.password_must_be_different"));
+      }
+
+      validatePassword(newPassword).get();
+      String encryptedPassword = passwordEncoder.encode(newPassword);
+      return userRepository.update(user, encryptedPassword).get();
+    });
+  }
+
   /**
    * Validate if password pass password rules.
    *
@@ -47,7 +83,7 @@ public class UserMutationsSpringImpl implements UserMutations {
    */
   private Try<String> validatePassword(String password) {
     return Try.of(() -> {
-      if (!password.matches(passwordRegex)) {
+      if (!password.matches(PASSWORD_REGEX)) {
         throw new IllegalArgumentException(
             MessageUtils.getMessage(messageSource, "error.iam.invalid_password"));
       }
