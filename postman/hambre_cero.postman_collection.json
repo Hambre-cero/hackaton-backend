@@ -32,52 +32,1303 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "User Logged In",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authHeader}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/users/me?lang=es",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "es"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Logged In - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/me",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jul 2021 14:38:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"id\": \"58dc8a98-8c0e-4785-aff8-3d10f457a58f\",\n        \"name\": \"Christian Barco\",\n        \"email\": \"barcochrist@gmail.com\",\n        \"status\": \"ACTIVE\",\n        \"createdOn\": \"2021-07-22T07:24:54\",\n        \"createdBy\": \"58dc8a98-8c0e-4785-aff8-3d10f457a58f\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authHeader}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\" : \"Barcochrist4\",\n    \"newPassword\" : \"Barcochrist6\",\n    \"newPasswordConfirmation\" : \"Barcochrist6\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users/password?lang=es",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"password"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "es"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update password - Password error",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\" : \"Marcela\",\n    \"newPassword\" : \"Marcela13\",\n    \"newPasswordConfirmation\" : \"Marcela13\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/password?lang=es",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"password"
+									],
+									"query": [
+										{
+											"key": "lang",
+											"value": "es"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=B8F63F165A90E56E614DBB7C6DFD0D90; Path=/hambrecero/v1; HttpOnly"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jul 2021 14:55:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"code\": \"temporal-code\",\n        \"title\": \"Contraseña anterior invalida, por favor revise la contraseña anterior\",\n        \"detail\": null,\n        \"timestamp\": \"2021-07-23T09:55:24.682915\",\n        \"status\": 500\n    }\n}"
+						},
+						{
+							"name": "Update password - OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\" : \"Barcochrist4\",\n    \"newPassword\" : \"Barcochrist6\",\n    \"newPasswordConfirmation\" : \"Barcochrist6\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users/password?lang=es",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"password"
+									],
+									"query": [
+										{
+											"key": "lang",
+											"value": "es"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=1DF4F3172834662D36C29D749D2B1BCF; Path=/hambrecero/v1; HttpOnly"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jul 2021 14:57:00 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"id\": \"58dc8a98-8c0e-4785-aff8-3d10f457a58f\",\n        \"name\": \"Christian Barco\",\n        \"email\": \"barcochrist@gmail.com\",\n        \"status\": \"ACTIVE\",\n        \"createdOn\": \"2021-07-22T07:24:54\",\n        \"createdBy\": \"58dc8a98-8c0e-4785-aff8-3d10f457a58f\"\n    }\n}"
+						}
+					]
 				}
 			]
 		},
 		{
-			"name": "Login",
-			"event": [
+			"name": "Auth",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"if (responseCode.code === 200)",
-							"    postman.setEnvironmentVariable(\"authHeader\", postman.getResponseHeader(\"Authorization\"));"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
+					"name": "Login",
+					"event": [
 						{
-							"key": "username",
-							"value": "barcochrist@gmail.com",
-							"type": "text"
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (responseCode.code === 200)",
+									"    postman.setEnvironmentVariable(\"authHeader\", postman.getResponseHeader(\"Authorization\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "barcochrist@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Barcochrist4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "External",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Diana\",\n    \"email\" : \"diana@gmail.com\",\n    \"password\" : \"Diana2345\",\n    \"roleId\": \"ROLE_ORGANIZATION\",\n    \"organizationId\": \"58dc8a98-8c0e-4785-aff8-3d10f457a78a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/external/sign-up?lang=es",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"external",
+								"sign-up"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "es"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sign Up - Invalid Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"Marcela\",\n    \"email\" : \"marcela@gmail.com\",\n    \"password\" : \"PruebaX\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/external/sign-up",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"external",
+										"sign-up"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jul 2021 14:18:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"code\": \"temporal-code\",\n        \"title\": \"Invalid password. Password must be at least 8 characters, no more than 44 characters, and must include at least one upper case letter, one lower case letter, and one numeric digit.\",\n        \"detail\": null,\n        \"timestamp\": \"2021-07-23T09:18:32.777801\",\n        \"status\": 500\n    }\n}"
 						},
 						{
-							"key": "password",
-							"value": "Barcochrist4",
-							"type": "text"
+							"name": "Sign Up - Contraseña Invalida (es)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"Marcela\",\n    \"email\" : \"marcela@gmail.com\",\n    \"password\" : \"PruebaX\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/external/sign-up?lang=es",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"external",
+										"sign-up"
+									],
+									"query": [
+										{
+											"key": "lang",
+											"value": "es"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=A86840C2A95A88756F7C37C5C3E5D06C; Path=/hambrecero/v1; HttpOnly"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jul 2021 14:19:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"code\": \"temporal-code\",\n        \"title\": \"Contraseña invalida. La contraseña debe tener al menos 8 caracteres, no más de 44 caracteres, debe incluir al menos una letra mayúscula, al menos una letra minúscula y un número.\",\n        \"detail\": null,\n        \"timestamp\": \"2021-07-23T09:19:20.000726\",\n        \"status\": 500\n    }\n}"
+						},
+						{
+							"name": "Sign Up - OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"Diana\",\n    \"email\" : \"diana@gmail.com\",\n    \"password\" : \"Diana2345\",\n    \"roleId\": \"ROLE_ORGANIZATION\",\n    \"organizationId\": \"58dc8a98-8c0e-4785-aff8-3d10f457a78a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/external/sign-up?lang=es",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"external",
+										"sign-up"
+									],
+									"query": [
+										{
+											"key": "lang",
+											"value": "es"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jul 2021 19:22:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"f8170581-2c1d-4160-b6bd-cd72526be54e\",\n    \"name\": \"Diana\",\n    \"email\": \"diana@gmail.com\",\n    \"roleId\": \"ROLE_ORGANIZATION\",\n    \"organizationId\": \"58dc8a98-8c0e-4785-aff8-3d10f457a78a\",\n    \"status\": \"ACTIVE\",\n    \"createdOn\": \"2021-07-23T14:22:45.622193\",\n    \"createdBy\": \"f8170581-2c1d-4160-b6bd-cd72526be54e\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Contiene endpoints que se pueden ejecutar sin necesidad de haber iniciado sesión"
+		},
+		{
+			"name": "Organization",
+			"item": [
+				{
+					"name": "Search Organizations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authHeader}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/organizations/search",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"organizations",
+								"search"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search Organizations - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/organizations/search",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"organizations",
+										"search"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jul 2021 17:57:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": [\n        {\n            \"id\": \"58dc8a98-8c0e-4785-aff8-3d10f457a78a\",\n            \"identification\": \"800 176112-4\",\n            \"name\": \"Fundación Paz y Bien\",\n            \"country\": \"CO\",\n            \"city\": \"Cali\",\n            \"province\": \"Valle del Cauca\",\n            \"address\": \"Diagonal 26 I2 No. 80A-25\",\n            \"postalCode\": \"5295\",\n            \"phoneNumber\": \"(57) 2-4039640\",\n            \"secondaryPhoneNumber\": null,\n            \"status\": \"ACTIVE\",\n            \"createdOn\": \"2021-07-22T07:24:54\",\n            \"createdBy\": \"58dc8a98-8c0e-4785-aff8-3d10f457a58f\"\n        }\n    ],\n    \"size\": 20,\n    \"totalElements\": 1,\n    \"totalPages\": 1,\n    \"numberOfElements\": 1,\n    \"number\": 0\n}"
 						}
 					]
 				},
-				"url": {
-					"raw": "{{baseUrl}}/login",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"login"
+				{
+					"name": "Create Organization",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authHeader}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identification\" : \"560176121-4\",\n    \"name\" : \"Fundamor\",\n    \"country\" : \"CO\",\n    \"city\" : \"Cali\",\n    \"province\" : \"Valle del Cauca\",\n    \"address\" : \"Calle 19 y 20 con carreras 148 y 154 La Viga, Pance\",\n    \"postalCode\" : null,\n    \"phoneNumber\" : \"(+57) 2 5557616\",\n    \"secondaryPhoneNumber\" : null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/organizations?lang=es",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"organizations"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "es"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Organization - OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identification\" : \"560176121-4\",\n    \"name\" : \"Fundamor\",\n    \"country\" : \"CO\",\n    \"city\" : \"Cali\",\n    \"province\" : \"Valle del Cauca\",\n    \"address\" : \"Calle 19 y 20 con carreras 148 y 154 La Viga, Pance\",\n    \"postalCode\" : null,\n    \"phoneNumber\" : \"(+57) 2 5557616\",\n    \"secondaryPhoneNumber\" : null\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/organizations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"organizations"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jul 2021 18:33:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"id\": \"62e54df8-578e-48c0-87a5-97df9719759a\",\n        \"identification\": \"560176121-4\",\n        \"name\": \"Fundamor\",\n        \"country\": \"CO\",\n        \"city\": \"Cali\",\n        \"province\": \"Valle del Cauca\",\n        \"address\": \"Calle 19 y 20 con carreras 148 y 154 La Viga, Pance\",\n        \"postalCode\": null,\n        \"phoneNumber\": \"(+57) 2 5557616\",\n        \"secondaryPhoneNumber\": null,\n        \"status\": \"ACTIVE\",\n        \"createdOn\": \"2021-07-23T13:33:43.204751\",\n        \"createdBy\": \"58dc8a98-8c0e-4785-aff8-3d10f457a58f\"\n    }\n}"
+						},
+						{
+							"name": "Create Organization - Ya registrada",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identification\" : \"560176121-4\",\n    \"name\" : \"Fundamor\",\n    \"country\" : \"CO\",\n    \"city\" : \"Cali\",\n    \"province\" : \"Valle del Cauca\",\n    \"address\" : \"Calle 19 y 20 con carreras 148 y 154 La Viga, Pance\",\n    \"postalCode\" : null,\n    \"phoneNumber\" : \"(+57) 2 5557616\",\n    \"secondaryPhoneNumber\" : null\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/organizations?lang=es",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"organizations"
+									],
+									"query": [
+										{
+											"key": "lang",
+											"value": "es"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=A46EDB8D0F13D34A391353E77CEFCD2F; Path=/hambrecero/v1; HttpOnly"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jul 2021 18:35:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"code\": \"temporal-code\",\n        \"title\": \"La organización ya está registrada\",\n        \"detail\": null,\n        \"timestamp\": \"2021-07-23T13:35:46.536953\",\n        \"status\": 500\n    }\n}"
+						}
 					]
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Announce",
+			"item": [
+				{
+					"name": "Announce by Identifier",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authHeader}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/announces/89kc8a98-8c0e-4785-aff8-3d10f457a98c",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"announces",
+								"89kc8a98-8c0e-4785-aff8-3d10f457a98c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Announce by Identifier - Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/announces/58dc8a98-8c0e-4785-aff8-3d10f457a58f",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"announces",
+										"58dc8a98-8c0e-4785-aff8-3d10f457a58f"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jul 2021 20:50:17 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"code\": \"temporal-code\",\n        \"title\": \"Announce with identifier 58dc8a98-8c0e-4785-aff8-3d10f457a58f not found\",\n        \"detail\": null,\n        \"timestamp\": \"2021-07-23T15:50:17.78364\",\n        \"status\": 404\n    }\n}"
+						},
+						{
+							"name": "Announce by Identifier - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/announces/89kc8a98-8c0e-4785-aff8-3d10f457a98c",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"announces",
+										"89kc8a98-8c0e-4785-aff8-3d10f457a98c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jul 2021 20:55:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"id\": \"89kc8a98-8c0e-4785-aff8-3d10f457a98c\",\n        \"name\": \"Refrigerador\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\",\n        \"organizationId\": \"58dc8a98-8c0e-4785-aff8-3d10f457a78a\",\n        \"status\": \"ACTIVE\",\n        \"createdOn\": \"2021-07-22T07:24:54\",\n        \"createdBy\": \"58dc8a98-8c0e-4785-aff8-3d10f457a58f\"\n    }\n}"
+						}
+					]
+				}
+			]
 		}
 	]
 }
