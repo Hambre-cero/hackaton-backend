@@ -17,7 +17,7 @@ create TABLE "organizations" (
   "country"                 VARCHAR(50) NOT NULL,
   "city"                    VARCHAR(100) NOT NULL,
   "province"                VARCHAR(100) NOT NULL,
-  "address"                 VARCHAR(50) NOT NULL,
+  "address"                 VARCHAR(200) NOT NULL,
   "postal_code"             VARCHAR(50) NULL,
   "phone_number"            VARCHAR(50) NOT NULL,
   "secondary_phone_number"  VARCHAR(50) NULL,
