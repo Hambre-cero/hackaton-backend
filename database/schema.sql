@@ -29,3 +29,14 @@ create TABLE "organizations" (
   UNIQUE("identification"),
   PRIMARY KEY ("id"))
 ;
+
+create TABLE "announces" (
+  "id"                      VARCHAR(100) NOT NULL,
+  "name"                    VARCHAR(100) NOT NULL,
+  "description"             VARCHAR NOT NULL,
+  "organization_id"         VARCHAR(100) NULL,
+  "status"                  VARCHAR(10) NOT NULL,
+  "created_on"              TIMESTAMP NOT NULL,
+  "created_by"              VARCHAR(100) NOT NULL,
+  PRIMARY KEY ("id"))
+;
