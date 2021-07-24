@@ -50,3 +50,13 @@ create TABLE "donations" (
   "created_by"              VARCHAR(100) NOT NULL,
   PRIMARY KEY ("id"))
 ;
+
+create TABLE "files" (
+  "id"                      VARCHAR(100) NOT NULL,
+  "title"                   VARCHAR(200) NOT NULL,
+  "url"                     VARCHAR NOT NULL,
+  "record_id"               VARCHAR(100) NOT NULL,
+  "created_on"              TIMESTAMP NOT NULL,
+  "created_by"              VARCHAR(100) NOT NULL,
+  PRIMARY KEY ("id"))
+;
