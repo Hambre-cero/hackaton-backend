@@ -1576,6 +1576,214 @@
 			"name": "Donation",
 			"item": [
 				{
+					"name": "Donation Item",
+					"item": [
+						{
+							"name": "Donation Items by Donation Identifier",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/donations/34c8ad86-5657-4a03-a0c3-367125b8a497/items",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"donations",
+										"34c8ad86-5657-4a03-a0c3-367125b8a497",
+										"items"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Donation Items by Donation Identifier - Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{authHeader}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/donations/89kc8a98-8c0e-4785-aff8-3d10f457a18i/items",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"donations",
+												"89kc8a98-8c0e-4785-aff8-3d10f457a18i",
+												"items"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 24 Jul 2021 15:25:13 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"response\": [],\n    \"size\": 20,\n    \"totalElements\": 0,\n    \"totalPages\": 0,\n    \"numberOfElements\": 0,\n    \"number\": 0\n}"
+								},
+								{
+									"name": "Donation Items by Donation Identifier - OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{authHeader}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/donations/34c8ad86-5657-4a03-a0c3-367125b8a497/items",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"donations",
+												"34c8ad86-5657-4a03-a0c3-367125b8a497",
+												"items"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 24 Jul 2021 15:32:32 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"response\": [\n        {\n            \"id\": \"j71f1dc9-5961-4d32-bf61-f9c3f27918q\",\n            \"title\": \"Arroz\",\n            \"description\": \"Arroz Roa en Kilos\",\n            \"unit\": \"KG\",\n            \"quantity\": 8,\n            \"expirationDate\": null,\n            \"donationId\": \"34c8ad86-5657-4a03-a0c3-367125b8a497\",\n            \"status\": \"ACTIVE\",\n            \"createdOn\": \"2021-07-23T19:46:11\",\n            \"createdBy\": \"58dc8a98-8c0e-4785-aff8-3d10f457a58f\"\n        }\n    ],\n    \"size\": 20,\n    \"totalElements\": 1,\n    \"totalPages\": 1,\n    \"numberOfElements\": 1,\n    \"number\": 0\n}"
+								}
+							]
+						}
+					]
+				},
+				{
 					"name": "Donation by Identifier",
 					"request": {
 						"method": "GET",
@@ -2117,6 +2325,126 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"error\": {\n        \"code\": \"temporal-code\",\n        \"title\": \"Anuncio con identificador b9af1dc9-5961-4d32- no encontrado\",\n        \"detail\": null,\n        \"timestamp\": \"2021-07-23T19:58:17.981867\",\n        \"status\": 404\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "File",
+			"item": [
+				{
+					"name": "Files by Record Identifier",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authHeader}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/files/by-record-id/89kc8a98-8c0e-4785-aff8-3d10f457a98c",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"files",
+								"by-record-id",
+								"89kc8a98-8c0e-4785-aff8-3d10f457a98c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Files by Record Identifier - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/files/by-record-id/89kc8a98-8c0e-4785-aff8-3d10f457a98c",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"files",
+										"by-record-id",
+										"89kc8a98-8c0e-4785-aff8-3d10f457a98c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Jul 2021 14:41:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": [\n        {\n            \"id\": \"b9af1dc9-5961-4d32-bf61-f9c3f272081u\",\n            \"title\": \"Titulo 1\",\n            \"url\": \"https://object-storage-places-test-smart-tier.s3.us-south.cloud-object-storage.appdomain.cloud/undefinedCaptura%20de%20Pantalla%202021-07-21%20a%20la(s)%2011.48.02%20a.%C2%A0m..png\",\n            \"recordId\": \"89kc8a98-8c0e-4785-aff8-3d10f457a98c\",\n            \"createdOn\": \"2021-07-22T07:24:54\",\n            \"createdBy\": \"58dc8a98-8c0e-4785-aff8-3d10f457a58f\"\n        }\n    ],\n    \"size\": 20,\n    \"totalElements\": 1,\n    \"totalPages\": 1,\n    \"numberOfElements\": 1,\n    \"number\": 0\n}"
 						}
 					]
 				}
