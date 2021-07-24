@@ -39,3 +39,14 @@ create TABLE "announces" (
   "created_by"              VARCHAR(100) NOT NULL,
   PRIMARY KEY ("id"))
 ;
+
+create TABLE "donations" (
+  "id"                      VARCHAR(100) NOT NULL,
+  "donor_id"                VARCHAR(100) NOT NULL,
+  "announce_id"             VARCHAR(100) NOT NULL,
+  "note"                    VARCHAR NULL,
+  "status"                  VARCHAR(10) NOT NULL,
+  "created_on"              TIMESTAMP NOT NULL,
+  "created_by"              VARCHAR(100) NOT NULL,
+  PRIMARY KEY ("id"))
+;
