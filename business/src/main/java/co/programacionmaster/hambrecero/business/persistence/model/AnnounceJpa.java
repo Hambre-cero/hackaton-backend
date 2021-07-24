@@ -2,6 +2,7 @@ package co.programacionmaster.hambrecero.business.persistence.model;
 
 import co.programacionmaster.hambrecero.businessapi.enums.AnnounceStatus;
 import co.programacionmaster.hambrecero.businessapi.model.Announce;
+import co.programacionmaster.hambrecero.businessapi.values.AnnounceValue;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.time.LocalDateTime;
 import javax.annotation.Nonnull;
@@ -44,6 +45,10 @@ public class AnnounceJpa implements Announce {
    */
   @SuppressFBWarnings("NP_NONNULL_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR")
   private AnnounceJpa() {
+  }
+
+  public Announce narrow() {
+    return AnnounceValue.from(this);
   }
 
   /**

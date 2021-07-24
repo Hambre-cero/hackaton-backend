@@ -10,6 +10,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import javax.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -24,6 +26,12 @@ public class AnnounceRepositorySpringImpl implements AnnounceRepository {
   @Override
   public Option<Announce> find(String id) {
     return Option.ofOptional(announceJpaRepository.findById(id));
+  }
+
+  @Nonnull
+  @Override
+  public Page<Announce> search(Pageable pageable) {
+    return announceJpaRepository.search(pageable).map(AnnounceJpa::narrow);
   }
 
   @Nonnull

@@ -7,6 +7,8 @@ import io.vavr.control.Option;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,5 +22,11 @@ public class AnnounceQueriesSpringImpl implements AnnounceQueries {
   @Override
   public Option<Announce> find(String id) {
     return announceRepository.find(id);
+  }
+
+  @Nonnull
+  @Override
+  public Page<Announce> search(Pageable pageable) {
+    return announceRepository.search(pageable);
   }
 }

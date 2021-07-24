@@ -1329,6 +1329,119 @@
 					]
 				},
 				{
+					"name": "Search Announces",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authHeader}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/announces/search",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"announces",
+								"search"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search Announces - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/announces/search",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"announces",
+										"search"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Jul 2021 13:03:57 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": [\n        {\n            \"id\": \"89kc8a98-8c0e-4785-aff8-3d10f457a98c\",\n            \"title\": \"Refrigerador\",\n            \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\",\n            \"status\": \"ACTIVE\",\n            \"createdOn\": \"2021-07-22T07:24:54\",\n            \"createdBy\": \"58dc8a98-8c0e-4785-aff8-3d10f457a58f\"\n        },\n        {\n            \"id\": \"b9af1dc9-5961-4d32-bf61-f9c3f27202dc\",\n            \"title\": \"Anuncio de Prueba\",\n            \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent tristique magna sit amet purus gravida\",\n            \"status\": \"ACTIVE\",\n            \"createdOn\": \"2021-07-23T18:41:13.808716\",\n            \"createdBy\": \"58dc8a98-8c0e-4785-aff8-3d10f457a58f\"\n        }\n    ],\n    \"size\": 20,\n    \"totalElements\": 2,\n    \"totalPages\": 1,\n    \"numberOfElements\": 2,\n    \"number\": 0\n}"
+						}
+					]
+				},
+				{
 					"name": "Create Announce",
 					"request": {
 						"method": "POST",
