@@ -51,6 +51,20 @@ create TABLE "donations" (
   PRIMARY KEY ("id"))
 ;
 
+create TABLE "donation_items" (
+  "id"                      VARCHAR(100) NOT NULL,
+  "title"                   VARCHAR(100) NOT NULL,
+  "description"             VARCHAR NOT NULL,
+  "unit"                    VARCHAR(100) NOT NULL,
+  "quantity"                FLOAT NOT NULL,
+  "expiration_date"         DATE NULL,
+  "donation_id"             VARCHAR(100) NOT NULL,
+  "status"                  VARCHAR(10) NOT NULL,
+  "created_on"              TIMESTAMP NOT NULL,
+  "created_by"              VARCHAR(100) NOT NULL,
+  PRIMARY KEY ("id"))
+;
+
 create TABLE "files" (
   "id"                      VARCHAR(100) NOT NULL,
   "title"                   VARCHAR(200) NOT NULL,
