@@ -1312,7 +1312,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 23 Jul 2021 20:55:08 GMT"
+									"value": "Fri, 23 Jul 2021 23:27:59 GMT"
 								},
 								{
 									"key": "Keep-Alive",
@@ -1324,7 +1324,686 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"response\": {\n        \"id\": \"89kc8a98-8c0e-4785-aff8-3d10f457a98c\",\n        \"name\": \"Refrigerador\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\",\n        \"organizationId\": \"58dc8a98-8c0e-4785-aff8-3d10f457a78a\",\n        \"status\": \"ACTIVE\",\n        \"createdOn\": \"2021-07-22T07:24:54\",\n        \"createdBy\": \"58dc8a98-8c0e-4785-aff8-3d10f457a58f\"\n    }\n}"
+							"body": "{\n    \"response\": {\n        \"id\": \"89kc8a98-8c0e-4785-aff8-3d10f457a98c\",\n        \"title\": \"Refrigerador\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\",\n        \"status\": \"ACTIVE\",\n        \"createdOn\": \"2021-07-22T07:24:54\",\n        \"createdBy\": \"58dc8a98-8c0e-4785-aff8-3d10f457a58f\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Announce",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authHeader}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\" : \"Anuncio de Prueba\",\n    \"description\" : \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent tristique magna sit amet purus gravida\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/announces",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"announces"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Announce - OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\" : \"Anuncio de Prueba\",\n    \"description\" : \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent tristique magna sit amet purus gravida\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/announces",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"announces"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jul 2021 23:41:15 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"id\": \"b9af1dc9-5961-4d32-bf61-f9c3f27202dc\",\n        \"title\": \"Anuncio de Prueba\",\n        \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent tristique magna sit amet purus gravida\",\n        \"status\": \"ACTIVE\",\n        \"createdOn\": \"2021-07-23T18:41:13.808716\",\n        \"createdBy\": \"58dc8a98-8c0e-4785-aff8-3d10f457a58f\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Donation",
+			"item": [
+				{
+					"name": "Donation by Identifier",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authHeader}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/donations/89kc8a98-8c0e-4785-aff8-3d10f457a18i",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"donations",
+								"89kc8a98-8c0e-4785-aff8-3d10f457a18i"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Donation by Identifier - Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/donations/89kc8a98-8c0e-4785-aff8-3d10f457a98c",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"donations",
+										"89kc8a98-8c0e-4785-aff8-3d10f457a98c"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Jul 2021 00:30:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"code\": \"temporal-code\",\n        \"title\": \"Donation with identifier 89kc8a98-8c0e-4785-aff8-3d10f457a98c not found\",\n        \"detail\": null,\n        \"timestamp\": \"2021-07-23T19:30:19.066128\",\n        \"status\": 404\n    }\n}"
+						},
+						{
+							"name": "Donation by Identifier - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/donations/89kc8a98-8c0e-4785-aff8-3d10f457a18i",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"donations",
+										"89kc8a98-8c0e-4785-aff8-3d10f457a18i"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Jul 2021 00:34:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"id\": \"89kc8a98-8c0e-4785-aff8-3d10f457a18i\",\n        \"donorId\": \"f8170581-2c1d-4160-b6bd-cd72526be54e\",\n        \"announceId\": \"b9af1dc9-5961-4d32-bf61-f9c3f27202dc\",\n        \"note\": null,\n        \"status\": \"ACTIVE\",\n        \"createdOn\": \"2021-07-22T07:24:54\",\n        \"createdBy\": \"f8170581-2c1d-4160-b6bd-cd72526be54e\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Donation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authHeader}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"donorId\" : \"f8170581-2c1d-4160-b6bd-cd72526be54e\",\n    \"announceId\" : \"b9af1dc9-5961-4d32-bf61-f9c3f27202dc\",\n    \"note\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent tristique magna sit amet purus gravida\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/donations?lang=es",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"donations"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "es"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Donation - OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"donorId\" : \"f8170581-2c1d-4160-b6bd-cd72526be54e\",\n    \"announceId\" : \"b9af1dc9-5961-4d32-bf61-f9c3f27202dc\",\n    \"note\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent tristique magna sit amet purus gravida\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/donations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"donations"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Jul 2021 00:46:12 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"id\": \"34c8ad86-5657-4a03-a0c3-367125b8a497\",\n        \"donorId\": \"f8170581-2c1d-4160-b6bd-cd72526be54e\",\n        \"announceId\": \"b9af1dc9-5961-4d32-bf61-f9c3f27202dc\",\n        \"note\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent tristique magna sit amet purus gravida\",\n        \"status\": \"ACTIVE\",\n        \"createdOn\": \"2021-07-23T19:46:11.714941\",\n        \"createdBy\": \"58dc8a98-8c0e-4785-aff8-3d10f457a58f\"\n    }\n}"
+						},
+						{
+							"name": "Create Donation - Donor not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"donorId\" : \"f8170581-2c1d-4160-b6bd-cd72526be54\",\n    \"announceId\" : \"b9af1dc9-5961-4d32-bf61-f9c3f27202dc\",\n    \"note\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent tristique magna sit amet purus gravida\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/donations?lang=es",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"donations"
+									],
+									"query": [
+										{
+											"key": "lang",
+											"value": "es"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=F5955B203041D3DC1DE4461552EACB1F; Path=/hambrecero/v1; HttpOnly"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Jul 2021 00:57:50 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"code\": \"temporal-code\",\n        \"title\": \"Donante con identificador f8170581-2c1d-4160-b6bd-cd72526be54 no encontrado\",\n        \"detail\": null,\n        \"timestamp\": \"2021-07-23T19:57:50.47412\",\n        \"status\": 404\n    }\n}"
+						},
+						{
+							"name": "Create Donation - Announce Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authHeader}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"donorId\" : \"f8170581-2c1d-4160-b6bd-cd72526be54e\",\n    \"announceId\" : \"b9af1dc9-5961-4d32-\",\n    \"note\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent tristique magna sit amet purus gravida\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/donations?lang=es",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"donations"
+									],
+									"query": [
+										{
+											"key": "lang",
+											"value": "es"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=0CEB3A78E4E003068A621719E0470AED; Path=/hambrecero/v1; HttpOnly"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Jul 2021 00:58:17 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"code\": \"temporal-code\",\n        \"title\": \"Anuncio con identificador b9af1dc9-5961-4d32- no encontrado\",\n        \"detail\": null,\n        \"timestamp\": \"2021-07-23T19:58:17.981867\",\n        \"status\": 404\n    }\n}"
 						}
 					]
 				}
