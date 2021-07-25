@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hambre-cero-production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hambre-cero-services
+  template:
+    metadata:
+      labels:
+        app: hambre-cero-services
+    spec:
+      containers:
+        - name: hambre-cero-services
+          image: icr.io/hambre-cero-namespace/hambre-cero-repository:1.0.0

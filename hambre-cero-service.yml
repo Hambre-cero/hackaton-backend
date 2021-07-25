@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: hambre-cero-production
+spec:
+  ports:
+    - port: 8080
+      nodePort: 31514
+  selector:
+    app: hambre-cero-services
+  type: NodePort
