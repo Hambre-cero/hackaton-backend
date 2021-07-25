@@ -62,7 +62,7 @@ public class ExternalRestController {
 
     return ResponseEntity.ok()
         .header(HEADER_STRING, TOKEN_PREFIX + token)
-        .body(auth.getName());
+        .body(token);
   }
 
   /**
