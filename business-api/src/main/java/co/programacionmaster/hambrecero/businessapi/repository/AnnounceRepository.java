@@ -16,5 +16,8 @@ public interface AnnounceRepository {
   Page<Announce> search(Pageable pageable);
 
   @Nonnull
+  Page<Announce> findByCreatedBy(String createdBy, Pageable pageable);
+
+  @Nonnull
   Try<Announce> create(Announce announce);
 }

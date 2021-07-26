@@ -13,4 +13,7 @@ public interface AnnounceQueries {
 
   @Nonnull
   Page<Announce> search(Pageable pageable);
+
+  @Nonnull
+  Page<Announce> findByCreatedBy(String createdBy, Pageable pageable);
 }

@@ -29,4 +29,10 @@ public class AnnounceQueriesSpringImpl implements AnnounceQueries {
   public Page<Announce> search(Pageable pageable) {
     return announceRepository.search(pageable);
   }
+
+  @Nonnull
+  @Override
+  public Page<Announce> findByCreatedBy(String createdBy, Pageable pageable) {
+    return announceRepository.findByCreatedBy(createdBy, pageable);
+  }
 }

@@ -36,6 +36,14 @@ public class AnnounceRepositorySpringImpl implements AnnounceRepository {
 
   @Nonnull
   @Override
+  public Page<Announce> findByCreatedBy(String createdBy, Pageable pageable) {
+    return announceJpaRepository
+        .findByCreatedBy(createdBy, pageable)
+        .map(AnnounceJpa::narrow);
+  }
+
+  @Nonnull
+  @Override
   public Try<Announce> create(Announce announce) {
     return Try.of(() -> announceJpaRepository.save(AnnounceJpa.from(announce)));
   }
