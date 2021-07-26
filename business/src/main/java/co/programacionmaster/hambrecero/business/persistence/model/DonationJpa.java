@@ -2,6 +2,7 @@ package co.programacionmaster.hambrecero.business.persistence.model;
 
 import co.programacionmaster.hambrecero.businessapi.enums.DonationStatus;
 import co.programacionmaster.hambrecero.businessapi.model.Donation;
+import co.programacionmaster.hambrecero.businessapi.values.DonationValue;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import io.vavr.control.Option;
 import java.time.LocalDateTime;
@@ -49,6 +50,10 @@ public class DonationJpa implements Donation {
    */
   @SuppressFBWarnings("NP_NONNULL_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR")
   private DonationJpa() {
+  }
+
+  public Donation narrow() {
+    return DonationValue.from(this);
   }
 
   /**

@@ -10,6 +10,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import javax.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -30,5 +32,11 @@ public class DonationRepositorySpringImpl implements DonationRepository {
   @Override
   public Try<Donation> create(Donation donation) {
     return Try.of(() -> donationJpaRepository.save(DonationJpa.from(donation)));
+  }
+
+  @Nonnull
+  @Override
+  public Page<Donation> search(Pageable pageable) {
+    return donationJpaRepository.search(pageable).map(DonationJpa::narrow);
   }
 }

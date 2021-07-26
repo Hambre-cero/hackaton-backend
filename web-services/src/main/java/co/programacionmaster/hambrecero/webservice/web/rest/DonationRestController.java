@@ -9,8 +9,8 @@ import co.programacionmaster.hambrecero.businessapi.service.DonationQueries;
 import co.programacionmaster.hambrecero.commons.exception.ResourceNotFoundException;
 import co.programacionmaster.hambrecero.commons.utils.MessageUtils;
 import co.programacionmaster.hambrecero.webservice.config.responses.SuccessResponse;
-import co.programacionmaster.hambrecero.webservice.model.DonationDraftResource;
 import co.programacionmaster.hambrecero.webservice.model.DonationResource;
+import co.programacionmaster.hambrecero.webservice.model.DonationDraftResource;
 import co.programacionmaster.hambrecero.webservice.model.DonationItemResource;
 import io.vavr.collection.List;
 import java.security.Principal;
@@ -55,6 +55,25 @@ public class DonationRestController {
         .getOrElseThrow(() -> new ResourceNotFoundException(MessageUtils
             .getMessage(messageSource, "error.web-services.donation_not_found", id)));
     return new SuccessResponse<>(DonationResource.from(response));
+  }
+
+  /**
+   * Search and filter all {@link Donation}s.
+   */
+  @GetMapping("/search")
+  public SuccessResponse<List<DonationResource>> search(Pageable pageable) {
+    Page<DonationResource> response = donationQueries
+        .search(pageable)
+        .map(DonationResource::from);
+
+    return new SuccessResponse(
+        response.getContent(),
+        response.getSize(),
+        response.getTotalElements(),
+        response.getTotalPages(),
+        response.getNumberOfElements(),
+        response.getNumber()
+    );
   }
 
   /**
