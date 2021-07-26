@@ -3,6 +3,7 @@ package co.programacionmaster.hambrecero.business.service;
 import co.programacionmaster.hambrecero.businessapi.model.Organization;
 import co.programacionmaster.hambrecero.businessapi.repository.OrganizationRepository;
 import co.programacionmaster.hambrecero.businessapi.service.OrganizationQueries;
+import io.vavr.control.Option;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import lombok.AllArgsConstructor;
@@ -16,6 +17,12 @@ import org.springframework.stereotype.Service;
 public class OrganizationQueriesSpringImpl implements OrganizationQueries {
 
   private final OrganizationRepository organizationRepository;
+
+  @Nonnull
+  @Override
+  public Option<Organization> find(String id) {
+    return organizationRepository.find(id);
+  }
 
   @Nonnull
   @Override
